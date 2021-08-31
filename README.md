@@ -12,7 +12,7 @@ Dummy Account :
 - pw    : pokopow123
 
 # Pages :
-![main](https://i.ibb.co/YXnh68y/Whats-App-Image-2021-08-31-at-17-49-33.jpg = 250x250)
+<img src="https://i.ibb.co/YXnh68y/Whats-App-Image-2021-08-31-at-17-49-33.jpg" width="48" height="48">
 
 # Design :
 ![alt](https://cdn.dribbble.com/users/1160700/screenshots/9579493/media/e8a5ba81324a60db163265644446e7ac.png)
