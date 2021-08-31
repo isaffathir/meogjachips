@@ -2,7 +2,7 @@
 
 Modern Mobile Social Media App
 
-Release : 0.2
+Release : 0.2 -> https://github.com/isaffathir/meogjachips/releases/tag/v0.2
 - Login System
 - Authentication
 - Login Logic : If you been login before no need to login again
