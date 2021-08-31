@@ -5,7 +5,7 @@ MDScreen:
     MDFloatLayout:
         md_bg_color: 1, 1, 1, 1
         Image:
-            source: "back.png"
+            source: "assets/images/back.png"
             size_hint: .9, .9
             pos_hint: {"center_x": .5, "center_y": .66}
         MDLabel:
@@ -24,6 +24,7 @@ MDScreen:
             halign: "center"
             color: rgba(127, 127, 127, 255)
         Button:
+            id: btnLogin
             text: "LOGIN"
             size_hint: .60, .065
             pos_hint: {"center_x": .5, "center_y": .23}

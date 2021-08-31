@@ -1,0 +1,38 @@
+#:kivy 2.0.0
+
+MDScreen:
+    name: "login"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        MDLabel:
+            id: reslog
+            text: ""
+            font_name: "BPoppins"
+            font_size: "23sp"
+            pos_hint: {"center_y": .66}
+            halign: "center"
+            color: rgba(34, 34, 34, 255)
+        MDTextFieldRound:
+            id: tem
+            text: ""
+            size_hint: .5, .065
+            pos_hint: {"center_y": .5,"center_x": .5}
+        MDTextFieldRound:
+            id: pw
+            background_color: 0, 0, 0, 0
+            text: ""
+            size_hint: .5, .065
+            pos_hint: {"center_y": .4,"center_x": .5}
+        Button:
+            text: "LOGIN"
+            background_color: 0, 0, 0, 0
+            pos_hint: {"center_y": .3,"center_x": .5}
+            size_hint: .3, .065
+            font_name: "BPoppins"
+            on_press: app.doLogin(tem.text, pw.text, reslog)
+            canvas.before:
+                Color:
+                    rgb: rgba(52, 0, 231, 255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos

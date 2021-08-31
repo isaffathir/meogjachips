@@ -1,22 +1,22 @@
 [app]
 
 # (str) Title of your application
-title = Hasna Alawiyah
+title = MeogjaChips!
 
 # (str) Package name
-package.name = nana
+package.name = meogjachips
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.nana
+package.domain = org.meogjachips
 
 # (str) Source code where the main.py live
 source.dir = .
 
 # (list) Source files to include (let empty to include all the files)
-source.include_exts = py,png,jpg,kv,atlas,ttf
+source.include_exts = py,png,jpg,kv,atlas,ttf,json
 
 # (list) List of inclusions using pattern matching
-#source.include_patterns = assets/*,images/*.png
+source.include_patterns = assets/images/*,assets/font/*,assets/kv/*
 
 # (list) Source files to exclude (let empty to not exclude anything)
 #source.exclude_exts = spec
@@ -28,7 +28,7 @@ source.include_exts = py,png,jpg,kv,atlas,ttf
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 0.1
+version = 0.2
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]

@@ -1,0 +1,23 @@
+#:kivy 2.0.0
+
+MDScreen:
+    name: "home"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        MDLabel:
+            text: "BERHASIL LOGIN"
+            size_hint: .5, .5
+            pos_hint: {"center_y": .5,"center_x": .5}
+        Button:
+            text: "LOGOUT"
+            background_color: 0, 0, 0, 0
+            pos_hint: {"center_y": .3,"center_x": .5}
+            size_hint: .3, .065
+            font_name: "BPoppins"
+            on_press: app.doLogout()
+            canvas.before:
+                Color:
+                    rgb: rgba(52, 0, 231, 255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos
