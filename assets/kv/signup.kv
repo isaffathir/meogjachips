@@ -2,3 +2,126 @@
 
 MDScreen:
     name: "signup"
+    MDFloatLayout:
+        md_bg_color: 1, 1, 1, 1
+        MDIconButton:
+            icon: "arrow-left"
+            pos_hint: {"center_y": .95}
+            user_font_size: "30sp"
+            theme_text_color: "Custom"
+            text_color: rgba(26, 24, 58, 255)
+            on_release:
+                root.manager.transition.direction = "right"
+                root.manager.current = "main"
+        MDLabel:
+            text: "H i !"
+            font_name: "BPoppins"
+            font_size: "26sp"
+            pos_hint: {"center_x": .6,"center_y": .85}
+            color: rgba(0, 0, 59, 255)
+        MDLabel:
+            text: "Create your account"
+            font_name: "MPoppins"
+            font_size: "18sp"
+            pos_hint: {"center_x": .6,"center_y": .79}
+            color: rgba(135, 135, 193, 255)
+        MDFloatLayout:
+            size_hint: .7, .07
+            pos_hint: {"center_x": .5,"center_y": .67}
+            TextInput:
+                id: name
+                hint_text: "Name"
+                font_name: "MPoppins"
+                size_hint_y: .75
+                pos_hint: {"center_x": .5,"center_y": .5}
+                background_color: 1, 1, 1, 0
+                foreground_color: rgba(0, 0, 59, 255)
+                cursor_color: rgba(0, 0, 59, 255)
+                font_size: "14sp"
+                cursor_width: "2sp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .5, "center_y": 0}
+                size_hint_y: .03
+                md_bg_color: rgba(178, 178, 178, 255 )
+        MDFloatLayout:
+            size_hint: .7, .07
+            pos_hint: {"center_x": .5,"center_y": .57}
+            TextInput:
+                id: email
+                hint_text: "Email"
+                font_name: "MPoppins"
+                size_hint_y: .75
+                pos_hint: {"center_x": .5,"center_y": .5}
+                background_color: 1, 1, 1, 0
+                foreground_color: rgba(0, 0, 59, 255)
+                cursor_color: rgba(0, 0, 59, 255)
+                font_size: "14sp"
+                cursor_width: "2sp"
+                multiline: False
+                email: True
+            MDFloatLayout:
+                pos_hint: {"center_x": .5, "center_y": 0}
+                size_hint_y: .03
+                md_bg_color: rgba(178, 178, 178, 255 )
+        MDFloatLayout:
+            size_hint: .7, .07
+            pos_hint: {"center_x": .5,"center_y": .47}
+            TextInput:
+                id: username
+                hint_text: "Username"
+                font_name: "MPoppins"
+                size_hint_y: .75
+                pos_hint: {"center_x": .5,"center_y": .5}
+                background_color: 1, 1, 1, 0
+                foreground_color: rgba(0, 0, 59, 255)
+                cursor_color: rgba(0, 0, 59, 255)
+                font_size: "14sp"
+                cursor_width: "2sp"
+                multiline: False
+            MDFloatLayout:
+                pos_hint: {"center_x": .5, "center_y": 0}
+                size_hint_y: .03
+                md_bg_color: rgba(178, 178, 178, 255 )
+        MDFloatLayout:
+            size_hint: .7, .07
+            pos_hint: {"center_x": .5,"center_y": .37}
+            TextInput:
+                id: pw
+                hint_text: "Password"
+                font_name: "MPoppins"
+                size_hint_y: .75
+                pos_hint: {"center_x": .5,"center_y": .5}
+                background_color: 1, 1, 1, 0
+                foreground_color: rgba(0, 0, 59, 255)
+                cursor_color: rgba(0, 0, 59, 255)
+                font_size: "14sp"
+                cursor_width: "2sp"
+                multiline: False
+                password: True
+            MDFloatLayout:
+                pos_hint: {"center_x": .5, "center_y": 0}
+                size_hint_y: .03
+                md_bg_color: rgba(178, 178, 178, 255 )
+        MDLabel:
+            id: reslog
+            text: ""
+            font_name: "MPoppins"
+            font_size: "13sp"
+            size_hint_x: .85
+            pos_hint: {"center_x": .5, "center_y": .28}
+            halign: "center"
+            color: rgba(0, 0, 59, 255)
+        Button:
+            text: "Register"
+            size_hint: .60, .065
+            pos_hint: {"center_x": .5, "center_y": .2}
+            background_color: 0, 0, 0, 0
+            font_name: "BPoppins"
+            on_press: app.doSignup(name.text,email.text,username.text, pw.text, reslog)
+            canvas.before:
+                Color:
+                    rgb: rgba(52, 0, 231, 255)
+                RoundedRectangle:
+                    size: self.size
+                    pos: self.pos

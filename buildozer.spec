@@ -19,10 +19,10 @@ source.include_exts = py,png,jpg,kv,atlas,ttf,json
 source.include_patterns = assets/images/*,assets/font/*,assets/kv/*
 
 # (list) Source files to exclude (let empty to not exclude anything)
-#source.exclude_exts = spec
+source.exclude_exts = spec
 
 # (list) List of directory to exclude (let empty to not exclude anything)
-#source.exclude_dirs = tests, bin
+source.exclude_dirs = tests, bin, buildozer, opt, .buildozer
 
 # (list) List of exclusions using pattern matching
 #source.exclude_patterns = license,images/*/*.jpg
