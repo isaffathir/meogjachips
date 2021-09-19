@@ -30,14 +30,25 @@ class Qtime(MDApp):
             elif self.root.current_screen.name == "login":
                 self.root.transition = SlideTransition(direction="right")
                 self.root.current = "main"
+                self.root.get_screen('login').ids.reslog.text = ''
+                self.root.get_screen('login').ids.tem.text = ''
+                self.root.get_screen('login').ids.pw.text = ''
                 return True
             elif self.root.current_screen.name == "signup":
-                self.root.transition = SlideTransition(direction = "right")
+                self.root.transition = SlideTransition(direction="right")
                 self.root.current = "main"
+                self.root.get_screen('signup').ids.reslog.text = ''
+                self.root.get_screen('signup').ids.name.text = ''
+                self.root.get_screen('signup').ids.email.text = ''
+                self.root.get_screen('signup').ids.username.text = ''
+                self.root.get_screen('signup').ids.pw.text = ''
                 return True
             elif self.root.current_screen.name == "home":
                 self.root.current = "home"
                 return True
+
+    def clearStatus(self, reslog):
+        reslog.text = ''
 
     def get_data(self):
         f = open("data.json", "rb")
@@ -83,9 +94,15 @@ class Qtime(MDApp):
         }
         r = requests.Session()
         res = r.post(url, params = params)
+        if tem == '':
+            reslog.text = str(res.json()['message'])
+        elif pw == '':
+            reslog.text = str(res.json()['message'])
         if res.ok:
             self.set_data("logged", "True")
             self.set_akun("username", tem)
+            self.root.get_screen('login').ids.tem.text = ''
+            self.root.get_screen('login').ids.pw.text = ''
             self.wayolo()
         else:
             reslog.text = str(res.json()['message'])
@@ -102,6 +119,11 @@ class Qtime(MDApp):
         res = r.post(url, params=params)
         if res.ok:
             reslog.text = "AKUN SUKSES DIBUAT"
+            self.root.get_screen('signup').ids.name.text = ''
+            self.root.get_screen('signup').ids.email.text = ''
+            self.root.get_screen('signup').ids.username.text = ''
+            self.root.get_screen('signup').ids.pw.text = ''
+            print(res.ok)
         else:
             reslog.text = str(res.json()['message'])
             print(res.json()['message'])
@@ -120,13 +142,12 @@ class Qtime(MDApp):
             'username': hayo['username']
         }
         self.root.current = "home"
-        self.root.get_screen('home').ids.userName.text = "username kamu : "+ " " + hayo['username']
         r = requests.Session()
         res = r.post(url, params=params)
         getres = res.json()[0]
+        self.root.get_screen('home').ids.userName.text = "username kamu : " + " " + str(getres['username'])
         self.root.get_screen('home').ids.name.text = "nama kamu : " + " " + str(getres['name'])
         self.root.get_screen('home').ids.email.text = "email kamu : " + " " + str(getres['email'])
-
 
 if __name__ == "__main__":
     LabelBase.register(name="MPoppins", fn_regular="assets/font/Poppins-Medium.ttf")

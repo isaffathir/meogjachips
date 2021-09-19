@@ -10,6 +10,7 @@ MDScreen:
             user_font_size: "30sp"
             theme_text_color: "Custom"
             text_color: rgba(26, 24, 58, 255)
+            on_press: app.clearStatus(reslog)
             on_release:
                 root.manager.transition.direction = "right"
                 root.manager.current = "main"
@@ -112,16 +113,10 @@ MDScreen:
             pos_hint: {"center_x": .5, "center_y": .28}
             halign: "center"
             color: rgba(0, 0, 59, 255)
-        Button:
+        MDRoundFlatButton:
             text: "Register"
             size_hint: .60, .065
             pos_hint: {"center_x": .5, "center_y": .2}
             background_color: 0, 0, 0, 0
             font_name: "BPoppins"
             on_press: app.doSignup(name.text,email.text,username.text, pw.text, reslog)
-            canvas.before:
-                Color:
-                    rgb: rgba(52, 0, 231, 255)
-                RoundedRectangle:
-                    size: self.size
-                    pos: self.pos

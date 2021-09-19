@@ -10,6 +10,7 @@ MDScreen:
             user_font_size: "30sp"
             theme_text_color: "Custom"
             text_color: rgba(26, 24, 58, 255)
+            on_press: app.clearStatus(reslog)
             on_release:
                 root.manager.transition.direction = "right"
                 root.manager.current = "main"
@@ -73,19 +74,15 @@ MDScreen:
             pos_hint: {"center_x": .5, "center_y": .42}
             halign: "center"
             color: rgba(0, 0, 59, 255)
-        Button:
+        MDFillRoundFlatButton:
             text: "LOGIN"
+            theme_text_color: "Custom"
+            text_color: 1, 1, 1, 1
             size_hint: .60, .065
             pos_hint: {"center_x": .5, "center_y": .34}
             background_color: 0, 0, 0, 0
             font_name: "BPoppins"
             on_press: app.doLogin(tem.text, pw.text, reslog)
-            canvas.before:
-                Color:
-                    rgb: rgba(52, 0, 231, 255)
-                RoundedRectangle:
-                    size: self.size
-                    pos: self.pos
         MDTextButton:
             text: "Forgot password?"
             pos_hint: {"center_x": .5,"center_y": .28}

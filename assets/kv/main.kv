@@ -23,7 +23,7 @@ MDScreen:
             pos_hint: {"center_x": .5, "center_y": .4}
             halign: "center"
             color: rgba(127, 127, 127, 255)
-        Button:
+        MDFillRoundFlatButton:
             id: btnLogin
             text: "LOGIN"
             size_hint: .60, .065
@@ -33,13 +33,7 @@ MDScreen:
             on_release:
                 root.manager.transition.direction = "left"
                 root.manager.current = "login"
-            canvas.before:
-                Color:
-                    rgb: rgba(52, 0, 231, 255)
-                RoundedRectangle:
-                    size: self.size
-                    pos: self.pos
-        Button:
+        MDRoundFlatButton:
             text: "REGISTER"
             color: rgba(34, 34, 34, 255)
             size_hint: .60, .065
@@ -49,9 +43,3 @@ MDScreen:
             on_release:
                 root.manager.transition.direction = "left"
                 root.manager.current = "signup"
-            canvas.before:
-                Color:
-                    rgb: rgba(52, 0, 231, 255)
-                Line:
-                    width: 1.2
-                    rounded_rectangle: self.x, self.y, self.width, self.height, 5, 5, 5, 5, 100
